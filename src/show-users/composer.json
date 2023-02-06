@@ -1,0 +1,21 @@
+{
+    "name": "ivrok/show-users",
+    "description": "A Wordpress Must-Use plugin(mu-plugin) that retrieves and displays example user data from the external API https://jsonplaceholder.typicode.com",
+    "type": "wp-mu-plugin",
+    "license": "mit",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ivrok\\ShowUsers\\": "app/",
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "brain/monkey": "2.*",
+        "phpunit/phpunit": "^9"
+    },
+    "require": {
+        "ivrok/wp-router": "dev-main",
+        "ivrok/wp-api-router": "dev-main"
+    }
+}

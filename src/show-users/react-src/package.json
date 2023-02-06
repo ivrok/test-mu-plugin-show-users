@@ -1,0 +1,21 @@
+{
+  "name": "react-src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build index.js --output-path=../assets",
+    "start": "wp-scripts start index.js --output-path=../assets",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ivan Trufanov",
+  "license": "MIT",
+  "dependencies": {
+    "@wordpress/scripts": "^25.2.0",
+    "axios": "^1.3.0",
+    "react-router-dom": "^6.8.0",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0"
+  }
+}

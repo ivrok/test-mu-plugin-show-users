@@ -1,0 +1,37 @@
+.suTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.suTable__row {
+  border-bottom: 1px solid #ddd;
+}
+
+.suTable__cell {
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.suTable__cellID {
+  width: 10%;
+}
+
+.suTable__cellName {
+  width: 30%;
+}
+
+.suTable__cellUsername {
+  width: 30%;
+}
+
+.suTable__cellLink {
+  width: 30%;
+  text-align: right;
+}
+
+.su_menu_link {
+  padding: 20px 0 0 8px;
+  display: block;
+  text-decoration: none;
+}

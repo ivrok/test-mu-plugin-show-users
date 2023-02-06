@@ -1,0 +1,7 @@
+{
+  "redefinable-internals": [
+    "is_readable",
+    "is_writable",
+    "copy"
+  ]
+}
