@@ -13,7 +13,9 @@ A Wordpress [Must-Use plugin(mu-plugin)](https://wordpress.org/documentation/art
 
 - PHP 8.0 or higher
 - Wordpress 6.1.1 or higher
-- Memcached 1.6.8 or higher(in that case if you'll select this type of caching)
+- Memcached 1.6.8(in that case if you'll select this type of caching)
+- [Composer](https://getcomposer.org/) 2.4.4
+- [Node.js](https://nodejs.org/en/) 18.13.0
 
 ## Installation
 
@@ -45,6 +47,18 @@ The plugin uses the following two Composer dependencies for routing:
 - `ivrok/wp-api-router` provides API routing for Wordpress
 - `phpunit/phpunit` provides unit testing framework for the project
 - `brain/monkey` provides additional libraries for the `phpunit/phpunit` framework
+
+## Development
+
+The plugin includes a ReactJS feature, with the source code located in the `src/show-users/react-src` directory.
+
+To develop the ReactJS components, you will need to have [Node.js](https://nodejs.org/en/) and npm installed.
+
+1. Navigate to `src/show-users/react-src`
+2. Run `npm i` to install the necessary Node.js dependencies
+3. To build the ReactJS components, run `npm run build`
+4. To start the development server and watch for changes, run `npm run start`
+5. The built assets are located in the `src/show-users/assets` directory
 
 ## Support
 
