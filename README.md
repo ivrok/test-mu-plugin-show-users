@@ -37,6 +37,15 @@ cd src/show-users
 vendor/bin/phpunit tests
 ```
 
+## Dependencies
+
+The plugin uses the following two Composer dependencies for routing:
+
+- `ivrok/wp-router` provides typical routing functionality in Wordpress
+- `ivrok/wp-api-router` provides API routing for Wordpress
+- `phpunit/phpunit` provides unit testing framework for the project
+- `brain/monkey` provides additional libraries for the `phpunit/phpunit` framework
+
 ## Support
 
 For any issues or questions, please create an issue in the repository or contact the maintainer.
