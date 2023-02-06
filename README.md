@@ -18,7 +18,7 @@ A Wordpress [Must-Use plugin(mu-plugin)](https://wordpress.org/documentation/art
 ## Installation
 
 1. Download the plugin
-2. Move the content of the plugin directory 'src' to the `mu-plugins` directory of your Wordpress installation
+2. Move the content of the plugin directory `src` to the `mu-plugins` directory of your Wordpress installation
 
 ## Configuration
 
