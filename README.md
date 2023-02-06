@@ -19,6 +19,7 @@ A Wordpress [Must-Use plugin(mu-plugin)](https://wordpress.org/documentation/art
 
 1. Download the plugin
 2. Move the content of the plugin directory `src` to the `mu-plugins` directory of your Wordpress installation
+3. Provide composer dependencies installation `cd src/show-users; composer i`
 
 ## Configuration
 
