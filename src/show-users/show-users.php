@@ -8,6 +8,7 @@ use Ivrok\ShowUsers\Installer\Installer;
 
 require_once "vendor/autoload.php";
 
+define('SU_VERSION', "1.0.1");
 define('SU_BASE_DIR', wp_normalize_path(__DIR__));
 define('SU_BASE_REL_DIR', str_replace(wp_normalize_path(ABSPATH), '/', SU_BASE_DIR));
 define('SU_MAIN_CONFIG', SU_BASE_DIR . "/config.php");

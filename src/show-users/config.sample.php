@@ -1,6 +1,5 @@
 <?php
 return [
-    "version" => "1.0.0",
     "api_users_domain" => "https://jsonplaceholder.typicode.com",
     "debug" => defined("WP_DEBUG") ? WP_DEBUG : false,
     "cache_type" => "File", //Memcached|File
