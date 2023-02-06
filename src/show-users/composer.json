@@ -15,7 +15,7 @@
         "phpunit/phpunit": "^9"
     },
     "require": {
-        "ivrok/wp-router": "dev-main",
-        "ivrok/wp-api-router": "dev-main"
+        "ivrok/wp-router": "1.0.2",
+        "ivrok/wp-api-router": "1.0.1"
     }
 }

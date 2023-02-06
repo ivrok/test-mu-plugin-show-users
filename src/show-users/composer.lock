@@ -4,23 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0605fb414496120fd19a9d068ee44d79",
+    "content-hash": "b763d7678d29db00896b1b956f8a8624",
     "packages": [
         {
             "name": "ivrok/wp-api-router",
-            "version": "dev-main",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivrok/WPAPIRouter.git",
-                "reference": "99bf1c1923c85629545cd6e8268d46ed548db1b8"
+                "reference": "8efbd1e550b213b82cd61227f6cef4de28f01741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivrok/WPAPIRouter/zipball/99bf1c1923c85629545cd6e8268d46ed548db1b8",
-                "reference": "99bf1c1923c85629545cd6e8268d46ed548db1b8",
+                "url": "https://api.github.com/repos/ivrok/WPAPIRouter/zipball/8efbd1e550b213b82cd61227f6cef4de28f01741",
+                "reference": "8efbd1e550b213b82cd61227f6cef4de28f01741",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -40,25 +39,24 @@
             "description": "An API Wordpress router.",
             "support": {
                 "issues": "https://github.com/ivrok/WPAPIRouter/issues",
-                "source": "https://github.com/ivrok/WPAPIRouter/tree/v1.0.1"
+                "source": "https://github.com/ivrok/WPAPIRouter/tree/1.0.1"
             },
-            "time": "2023-02-06T04:23:20+00:00"
+            "time": "2023-02-06T10:13:58+00:00"
         },
         {
             "name": "ivrok/wp-router",
-            "version": "dev-main",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivrok/WPRouter.git",
-                "reference": "9b3a0eed227a4b45ecfcc3c7fed22533b98db92d"
+                "reference": "2d419ef3b508c01461d9d0fcaa4a72f5c5ce87d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivrok/WPRouter/zipball/9b3a0eed227a4b45ecfcc3c7fed22533b98db92d",
-                "reference": "9b3a0eed227a4b45ecfcc3c7fed22533b98db92d",
+                "url": "https://api.github.com/repos/ivrok/WPRouter/zipball/2d419ef3b508c01461d9d0fcaa4a72f5c5ce87d6",
+                "reference": "2d419ef3b508c01461d9d0fcaa4a72f5c5ce87d6",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -78,9 +76,9 @@
             "description": "A router for Wordpress.",
             "support": {
                 "issues": "https://github.com/ivrok/WPRouter/issues",
-                "source": "https://github.com/ivrok/WPRouter/tree/v1.0.1"
+                "source": "https://github.com/ivrok/WPRouter/tree/1.0.2"
             },
-            "time": "2023-02-06T03:52:03+00:00"
+            "time": "2023-02-06T10:16:17+00:00"
         }
     ],
     "packages-dev": [
@@ -957,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0154749b616e939be2a22e404a361aee6e2c11ac"
+                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0154749b616e939be2a22e404a361aee6e2c11ac",
-                "reference": "0154749b616e939be2a22e404a361aee6e2c11ac",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7b1615e3e887d6c719121c6d4a44b0ab9645555",
+                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555",
                 "shasum": ""
             },
             "require": {
@@ -1035,7 +1033,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.3"
             },
             "funding": [
                 {
@@ -1051,7 +1049,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-03T19:38:42+00:00"
+            "time": "2023-02-04T13:37:15+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2070,10 +2068,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ivrok/wp-router": 20,
-        "ivrok/wp-api-router": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
