@@ -63,4 +63,5 @@ To develop the ReactJS components, you will need to have [Node.js](https://nodej
 ## Support
 
 For any issues or questions, please create an issue in the repository or contact the maintainer.
+- Ivan Trufanov, [ivrokrambler@gmail.com](mailto:ivrokrambler@gmail.com)
 
