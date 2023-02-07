@@ -6,12 +6,9 @@ class CacheFabric
 {
     public static function getCacheClass($type)
     {
-        switch ($type) {
-            case "File":
-                return FileCache::getInstance();
-
-            case "Memcached":
-                return MemcachedCache::getInstance();
-        }
+        return match ($type) {
+            "File"      => FileCache::getInstance(),
+            "Memcached" => MemcachedCache::getInstance()
+        };
     }
 }
