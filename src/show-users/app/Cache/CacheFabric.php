@@ -7,8 +7,8 @@ class CacheFabric
     public static function getCacheClass($type)
     {
         return match ($type) {
-            "File"      => FileCache::getInstance(),
-            "Memcached" => MemcachedCache::getInstance()
+            "File"      => new FileCache(),
+            "Memcached" => new MemcachedCache()
         };
     }
 }

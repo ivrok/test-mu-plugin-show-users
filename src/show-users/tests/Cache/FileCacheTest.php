@@ -28,6 +28,8 @@ class FileCacheTest extends AbstractBase
         $this->settings = new Settings();
 
         ServiceContainer::getInstance()->register("su/settings", $this->settings);
+
+        $this->loadSettings();
     }
 
     private function loadSettings()
@@ -51,18 +53,16 @@ class FileCacheTest extends AbstractBase
 
         $this->expectException(SettingsOptionNotFound::class);
 
-        FileCache::getInstance();
+        new FileCache();
     }
 
     public function testConstructorExceptionCacheDirNotReadable()
     {
-        $this->loadSettings();
-
         Functions\when('is_readable')->justReturn(false);
 
         $this->expectException(FileNotReadableException::class);
 
-        FileCache::getInstance();
+        new FileCache();
     }
 
     public function testConstructorExceptionCacheDirNotWritable()
@@ -73,20 +73,19 @@ class FileCacheTest extends AbstractBase
 
         $this->expectException(FileNotWritableException::class);
 
-        FileCache::getInstance();
+        new FileCache();
     }
 
     public function testSetCacheSuccess()
     {
-        $this->loadSettings();
-
         $cacheName = $this->cacheTestName;
         $cacheFile = $this->getCacheFilePath($cacheName);
         $cacheContent = "test_data";
         $expiredTime = -1;
         $expected = sprintf('{"expireTime":%d,"data":"%s"}', time() - 1, $cacheContent);
 
-        FileCache::getInstance()->setCache($cacheName, $cacheContent, $expiredTime);
+        $cache = new FileCache();
+        $cache->setCache($cacheName, $cacheContent, $expiredTime);
 
         $this->assertFileExists($cacheFile);
         $this->assertStringEqualsFile($cacheFile, $expected);
@@ -94,13 +93,12 @@ class FileCacheTest extends AbstractBase
 
     public function testExceptionCacheExpiredFail()
     {
-        $this->loadSettings();
-
         $cacheName = "test_cache";
 
         $this->expectException(CacheExpired::class);
 
-        FileCache::getInstance()->getCache($cacheName);
+        $cache = new FileCache();
+        $cache->getCache($cacheName);
     }
 
     public function testGetCache()
@@ -111,7 +109,9 @@ class FileCacheTest extends AbstractBase
 
         @file_put_contents($cacheFile, sprintf('{"expireTime":%d,"data":"%s"}', time(), $expectedCacheContent));
 
-        $data = FileCache::getInstance()->getCache($this->cacheTestName);
+
+        $cache = new FileCache();
+        $data = $cache->getCache($this->cacheTestName);
 
         $this->assertEquals($expectedCacheContent, $data);
     }
@@ -124,7 +124,8 @@ class FileCacheTest extends AbstractBase
 
         @file_put_contents($cacheFile, sprintf('{"expireTime":%d,"data":"%s"}', time(), $expectedCacheContent));
 
-        FileCache::getInstance()->removeCache($this->cacheTestName);
+        $cache = new FileCache();
+        $cache->removeCache($this->cacheTestName);
 
         $this->assertTrue(!file_exists($cacheFile));
     }

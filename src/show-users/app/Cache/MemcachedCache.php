@@ -12,10 +12,8 @@ class MemcachedCache extends AbstractCache
 {
     private $memcached = null;
 
-    protected function __construct()
+    public function __construct()
     {
-        parent::__construct();
-
         $settings = ServiceContainer::getInstance()->load("su/settings")->getOption('memcached');
 
         if (!$settings) {

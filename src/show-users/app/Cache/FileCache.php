@@ -13,9 +13,8 @@ class FileCache extends AbstractCache
 {
     private $cacheDir = null;
 
-    protected function __construct()
+    public function __construct()
     {
-        parent::__construct();
 
         $settings = ServiceContainer::getInstance()->load("su/settings")->getOption('file_cache');
 
