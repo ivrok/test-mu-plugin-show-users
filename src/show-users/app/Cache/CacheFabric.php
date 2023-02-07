@@ -4,7 +4,7 @@ namespace Ivrok\ShowUsers\Cache;
 
 class CacheFabric
 {
-    public static function getCacheClass($type)
+    public static function getCache($type)
     {
         return match ($type) {
             "File"      => new FileCache(),

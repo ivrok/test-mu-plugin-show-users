@@ -18,7 +18,7 @@ $sContainer->register("su/layout", $layout);
 
 $sContainer->register("su/response", new Response($layout));
 
-$cache = CacheFabric::getCacheClass(ServiceContainer::getInstance()->load("su/settings")->getOption("cache_type"));
+$cache = CacheFabric::getCache(ServiceContainer::getInstance()->load("su/settings")->getOption("cache_type"));
 $sContainer->register("su/cache", $cache);
 
 $sContainer->register("su/api", new API);
