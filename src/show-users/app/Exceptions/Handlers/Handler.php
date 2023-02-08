@@ -19,10 +19,12 @@ class Handler
     {
         status_header(500);
 
-        //logging and other important actions here
+        do_action("critical_error", $exception);
 
         $response = $this->responseFactory->makeResponse(Request::getRequestType());
 
         $response->responseException($exception);
+
+        wp_die($exception->getMessage());
     }
 }
