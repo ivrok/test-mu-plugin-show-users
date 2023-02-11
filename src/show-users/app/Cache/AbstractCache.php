@@ -3,22 +3,21 @@
 namespace Ivrok\ShowUsers\Cache;
 
 use Ivrok\ShowUsers\Exceptions\CacheExpired;
-use Ivrok\ShowUsers\Exceptions\CacheNotExisted;
 
 abstract class AbstractCache implements CacheInterface
 {
-    protected abstract function _setCache($name, $data): void;
-    protected abstract function _getCache($name): string;
-    public abstract function removeCache($name): void;
+    abstract public  function removeCache($name): void;
+    abstract public function setCache(string $name, mixed $data, int $expireTime): void;
+    abstract protected function retrieveCacheData(string $name): string;
 
-    public function setCache(string $name, mixed $data, int $expireTime): void
+    public function prepareDataForCaching(string $name, mixed $data, int $expireTime): string
     {
-        $this->_setCache($name, json_encode(["expireTime" => $this->getTime($expireTime),"data" => $data]));
+        return json_encode(["expireTime" => $this->getTime($expireTime),"data" => $data]);
     }
 
     public function getCache(string $name): mixed
     {
-        $json = $this->_getCache($name);
+        $json = $this->retrieveCacheData($name);
 
         $data = json_decode($json, true);
 

@@ -6,7 +6,6 @@ use Ivrok\ShowUsers\Exceptions\CacheNotExisted;
 use Ivrok\ShowUsers\Exceptions\NoConnectionMemcached;
 use Ivrok\ShowUsers\Exceptions\NoSettingsException;
 use Ivrok\ShowUsers\ServiceContainer\ServiceContainer;
-use Ivrok\ShowUsers\Settings\Settings;
 
 class MemcachedCache extends AbstractCache
 {
@@ -27,12 +26,12 @@ class MemcachedCache extends AbstractCache
         }
     }
 
-    protected function _setCache($name, $data): void
+    public function setCache(string $name, mixed $data, int $expireTime): void
     {
-        $this->memcached->set($name, $data);
+        $this->memcached->set($name, $this->prepareDataForCaching($name, $data, $expireTime));
     }
 
-    protected function _getCache($name): string
+    protected function retrieveCacheData($name): string
     {
         $res = $this->memcached->get($name);
 

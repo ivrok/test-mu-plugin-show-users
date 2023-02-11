@@ -7,7 +7,6 @@ use Ivrok\ShowUsers\Exceptions\File\FileNotReadableException;
 use Ivrok\ShowUsers\Exceptions\File\FileNotWritableException;
 use Ivrok\ShowUsers\Exceptions\NoSettingsException;
 use Ivrok\ShowUsers\ServiceContainer\ServiceContainer;
-use Ivrok\ShowUsers\Settings\Settings;
 
 class FileCache extends AbstractCache
 {
@@ -39,12 +38,12 @@ class FileCache extends AbstractCache
         $this->cacheDir = $cacheDir;
     }
 
-    protected function _setCache($name, $data): void
+    public function setCache(string $name, mixed $data, int $expireTime): void
     {
-        @file_put_contents($this->getCacheFilename($name), $data);
+        @file_put_contents($this->getCacheFilename($name), $this->prepareDataForCaching($name, $data, $expireTime));
     }
 
-    protected function _getCache($name): string
+    protected function retrieveCacheData($name): string
     {
         if (!file_exists($this->getCacheFilename($name))) {
             throw new CacheNotExisted("Cache is not existed");
